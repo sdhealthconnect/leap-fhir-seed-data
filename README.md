@@ -1,4 +1,5 @@
 # leap-fhir-seed-data
+
 This repository contains data load mechanisms for populating a new instance of LEAP HAPI-FHIR JPAServer version 4.1.0.
 It utilizes Postman version 8.10.0 to simplify the bulk loading of Organization, Practitioners, Questionnaires, and our test Patients clinical records.
 There are other freely available tools for performing this task.  This is just one example we have setup for you.
@@ -62,11 +63,13 @@ hapi-fhir:
 ````
 
 ## Post Load Patient-User Provisioning
+
 - Patient Users of the LEAP Consent UI require their accounts to be mapped to their FHIR patient resource on the consent repositiory.  This is done for you as an automated function 
 provided to admin user on our demonstration platform.  For more info on this refer to https://github.com/sdhealthconnect/leap-consent-ui#readme.
 
 
 ## Refreshing Data
+
 If you wish to reload your hapi-fhir-jpaserver instance.  Perform the following;
 - 1 Shutdown your hapi fhir instance, if using docker the command would be similar to
 ````
@@ -102,6 +105,10 @@ mysql> exit
 
 If your hapi-fhir-jpaserver is configured correctly it will automatically recreate the database and its tables
 on first request to base URL.
+
+Redo Steps.
+- Bulk Load - **Step #4** Run Postman Collection
+- Experimental Use Cases Load - **Step #2**  Run Load Tests
 
 
 
