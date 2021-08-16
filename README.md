@@ -46,7 +46,7 @@ To
 ![run Collection](docs/assets/runcollection.png?raw=true)
 
 
-##Steps for Loading Informed Consent Experimental Use Cases
+## Steps for Loading Informed Consent Experimental Use Cases
 
 **Step #1** - Modify application-test.yaml with your HAPI FHIR endpoint.  This file is located in the folder {clone directory}/src/test/resources/config.
 
