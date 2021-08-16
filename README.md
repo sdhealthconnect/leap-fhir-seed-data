@@ -38,7 +38,7 @@ To
 
 ![Environment Set](docs/assets/environmentset.png?raw=true)
 
-- Modify your settings to allow to read files outside of your LEAP workspace.
+- Modify your settings to allow you to process files outside of your LEAP workspace.
 ![Modify Settings](docs/assets/modifysettings.png?raw=true)
 
 
