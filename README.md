@@ -12,7 +12,7 @@ There are other freely available tools for performing this task.  This is just o
 ````
 
 **Step #2** Install Postman
-Download and install Postman desktop for you OS at postman.com.   They provide a "Free" community addition plan for up to 3 team members 
+- Download and install Postman desktop for your OS platform at postman.com.   Postman.com provides a "Free" community addition plan for up to 3 team members. 
 
 **Step #3** Setup Postman
 - Create a workspace for this activity.  Name it LEAP.
@@ -21,10 +21,11 @@ Download and install Postman desktop for you OS at postman.com.   They provide a
 - Import Enviroment File {clone directory}/leap-fhir-seed-data/src/main/resources/fhir-seed-data-environment.postman_environment.json
 ![Import Environment](docs/assets/importenvironment.png?raw=true)
 
-- Modify Enviroment Variable for your working enviroment.  
+- Modify Enviroment Variables for your working enviroment.  
 You will need to change the values for you SEED_DATA_DIR and HAPI_FHIR_URL they are currently set as.
 
 SEED_DATA_DIR=/Users/duanedecouteau/leap-fhir-seed-data/seed-data
+
 HAPI_FHIR_URL=http://34.94.253.50:8080/hapi-fhir-jpaserver/fhir/
 
 ![Modify Environment](docs/assets/modifyenvironment.png?raw=true)
@@ -61,8 +62,48 @@ hapi-fhir:
 ````
 
 ## Post Load Patient-User Provisioning
-Users of the LEAP Consent UI require their account to be mapped to a FHIR patient resource.  This is done for you as an automated function 
-provide to admin user in demo platform.  For more info on this refer to https://github.com/sdhealthconnect/leap-consent-ui#readme.
+- Patient Users of the LEAP Consent UI require their accounts to be mapped to their FHIR patient resource on the consent repositiory.  This is done for you as an automated function 
+provided to admin user on our demonstration platform.  For more info on this refer to https://github.com/sdhealthconnect/leap-consent-ui#readme.
+
+
+## Refreshing Data
+If you wish to reload your hapi-fhir-jpaserver instance.  Perform the following;
+- 1 Shutdown your hapi fhir instance, if using docker the command would be similar to
+````
+> docker stop hapi-fhir-jpaserver
+````
+
+- 2 Log into your mysql instance, and drop hapi database, again if using docker and mysql the command would be similar to 
+````
+>  docker exec -it {container id} bash
+>  mysql -u root -ppassword
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hapi               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> drop database hapi;
+mysql> exit
+> exit
+````
+
+- 3 Restart hapi-fhir-jpaserver.  Again if using docker the command would be similar to;
+````
+> docker start hapi-fhir-jpaserver
+````
+
+If your hapi-fhir-jpaserver is configured correctly it will automatically recreate the database and its tables
+on first request to base URL.
+
+
 
 
 
