@@ -1,0 +1,647 @@
+{
+  "resourceType": "Bundle",
+  "type": "batch",
+  "entry": [ {
+    "fullUrl": "urn:uuid:d76dbd0e-3f1a-3fcf-bb51-9caed309446f",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "d76dbd0e-3f1a-3fcf-bb51-9caed309446f",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 702
+      } ],
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9999999379"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "Reséndez908",
+        "given": [ "Amalia471" ],
+        "prefix": [ "Dr." ]
+      } ],
+      "telecom": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Amalia471.Reséndez908@example.com",
+        "use": "work"
+      } ],
+      "address": [ {
+        "line": [ "4455 SOUTH I-19 FRONTAGE ROAD" ],
+        "city": "GREEN VALLEY",
+        "state": "AZ",
+        "postalCode": "85614",
+        "country": "US"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner",
+      "ifNoneExist": "identifier=http://hl7.org/fhir/sid/us-npi|9999999379"
+    }
+  }, {
+    "fullUrl": "urn:uuid:13e9adf7-7073-006f-6251-b0a5b764c5f5",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "13e9adf7-7073-006f-6251-b0a5b764c5f5",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9999999379"
+        },
+        "display": "Dr. Amalia471 Reséndez908"
+      },
+      "organization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "f8c6df10-5a45-3758-abe9-1d8065a35de8"
+        },
+        "display": "GREEN VALLEY HOSPITAL"
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "specialty": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "location": [ {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "6e00749b-d71b-30f5-bf27-7dcabea59c83"
+        },
+        "display": "GREEN VALLEY HOSPITAL"
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "5203934710"
+      }, {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Amalia471.Reséndez908@example.com",
+        "use": "work"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "PractitionerRole"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9d40d5e8-2563-3286-bafb-13e03ffa0b04",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "9d40d5e8-2563-3286-bafb-13e03ffa0b04",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 487
+      } ],
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9999999269"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "Manzanares924",
+        "given": [ "Carla633" ],
+        "prefix": [ "Dr." ]
+      } ],
+      "telecom": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Carla633.Manzanares924@example.com",
+        "use": "work"
+      } ],
+      "address": [ {
+        "line": [ "1171 WEST TARGET RANGE ROAD" ],
+        "city": "NOGALES",
+        "state": "AZ",
+        "postalCode": "85621",
+        "country": "US"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner",
+      "ifNoneExist": "identifier=http://hl7.org/fhir/sid/us-npi|9999999269"
+    }
+  }, {
+    "fullUrl": "urn:uuid:4b2bd66c-e8eb-923c-30f6-ec5476a0c300",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "4b2bd66c-e8eb-923c-30f6-ec5476a0c300",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9999999269"
+        },
+        "display": "Dr. Carla633 Manzanares924"
+      },
+      "organization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "205d4dac-abf1-32cf-b9e1-91f17f9c5fec"
+        },
+        "display": "HOLY CROSS HOSPITAL"
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "specialty": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "location": [ {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "7946c962-b629-3adc-b42e-42f5c2a1209d"
+        },
+        "display": "HOLY CROSS HOSPITAL"
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "5202853000"
+      }, {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Carla633.Manzanares924@example.com",
+        "use": "work"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "PractitionerRole"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ddb58ada-ebf4-3f7f-a8ab-9bffd554a2ec",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "ddb58ada-ebf4-3f7f-a8ab-9bffd554a2ec",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 69
+      } ],
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9999964619"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "Grady603",
+        "given": [ "Madalene903" ],
+        "prefix": [ "Dr." ]
+      } ],
+      "telecom": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Madalene903.Grady603@example.com",
+        "use": "work"
+      } ],
+      "address": [ {
+        "line": [ "1171 W TARGET RANGE RD" ],
+        "city": "NOGALES",
+        "state": "AZ",
+        "postalCode": "85621-2487",
+        "country": "US"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner",
+      "ifNoneExist": "identifier=http://hl7.org/fhir/sid/us-npi|9999964619"
+    }
+  }, {
+    "fullUrl": "urn:uuid:3d322bae-c772-1c3b-517b-7dbedd0b2376",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "3d322bae-c772-1c3b-517b-7dbedd0b2376",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9999964619"
+        },
+        "display": "Dr. Madalene903 Grady603"
+      },
+      "organization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "56dea1ac-0aaf-378c-9111-efecdd362186"
+        },
+        "display": "SANTA CRUZ RADIOLOGY, LLC"
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "specialty": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "location": [ {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "5af0e76f-025e-312b-82e8-13912702fc90"
+        },
+        "display": "SANTA CRUZ RADIOLOGY, LLC"
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "520-287-2771"
+      }, {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Madalene903.Grady603@example.com",
+        "use": "work"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "PractitionerRole"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9c56f422-3743-37fc-94df-87a4cf2294a7",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "9c56f422-3743-37fc-94df-87a4cf2294a7",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 559
+      } ],
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9999964479"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "Rangel145",
+        "given": [ "Cristobal567" ],
+        "prefix": [ "Dr." ]
+      } ],
+      "telecom": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Cristobal567.Rangel145@example.com",
+        "use": "work"
+      } ],
+      "address": [ {
+        "line": [ "28720 S NOGALES HWY" ],
+        "city": "AMADO",
+        "state": "AZ",
+        "postalCode": "85645-9997",
+        "country": "US"
+      } ],
+      "gender": "male"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner",
+      "ifNoneExist": "identifier=http://hl7.org/fhir/sid/us-npi|9999964479"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b129cce9-be38-ee2b-6730-66c3ebe578d1",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "b129cce9-be38-ee2b-6730-66c3ebe578d1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9999964479"
+        },
+        "display": "Dr. Cristobal567 Rangel145"
+      },
+      "organization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "07345d50-e2dd-3d7d-8cf4-bbb740989b68"
+        },
+        "display": "UNITED COMMUNITY HEALTH CENTER-MARIA AUXILIADORA, INC."
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "specialty": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "location": [ {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "a6e0d6e1-0b7b-3ec4-a9ea-561a554acfab"
+        },
+        "display": "UNITED COMMUNITY HEALTH CENTER-MARIA AUXILIADORA, INC."
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "520-407-5602"
+      }, {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Cristobal567.Rangel145@example.com",
+        "use": "work"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "PractitionerRole"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ce57ba4b-25f0-3b0e-8f90-6a7eebb8d70c",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "ce57ba4b-25f0-3b0e-8f90-6a7eebb8d70c",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 45
+      } ],
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9999945649"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "Gracia333",
+        "given": [ "Blanca837" ],
+        "prefix": [ "Dr." ]
+      } ],
+      "telecom": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Blanca837.Gracia333@example.com",
+        "use": "work"
+      } ],
+      "address": [ {
+        "line": [ "1209 W TARGET RANGE RD" ],
+        "city": "NOGALES",
+        "state": "AZ",
+        "postalCode": "85621-2466",
+        "country": "US"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner",
+      "ifNoneExist": "identifier=http://hl7.org/fhir/sid/us-npi|9999945649"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d4829777-cff0-f88a-c42c-6e4ee140ef89",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "d4829777-cff0-f88a-c42c-6e4ee140ef89",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9999945649"
+        },
+        "display": "Dr. Blanca837 Gracia333"
+      },
+      "organization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "8cf132db-f62f-3567-b7eb-48d4f9ad2d8a"
+        },
+        "display": "TUCSON PHYSICIAN GROUP HOLDINGS LLC"
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "specialty": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "location": [ {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "45c2fba4-1463-3201-ae64-ec72b5e70601"
+        },
+        "display": "TUCSON PHYSICIAN GROUP HOLDINGS LLC"
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "520-285-3135"
+      }, {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Blanca837.Gracia333@example.com",
+        "use": "work"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "PractitionerRole"
+    }
+  }, {
+    "fullUrl": "urn:uuid:3942cd0a-54ae-39e3-bec8-a5aded9eac38",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "3942cd0a-54ae-39e3-bec8-a5aded9eac38",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 14
+      } ],
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9999927289"
+      } ],
+      "active": true,
+      "name": [ {
+        "family": "Hane680",
+        "given": [ "Mariam937" ],
+        "prefix": [ "Dr." ]
+      } ],
+      "telecom": [ {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Mariam937.Hane680@example.com",
+        "use": "work"
+      } ],
+      "address": [ {
+        "line": [ "9348 EAST RITA ROAD" ],
+        "city": "TUCSON",
+        "state": "AZ",
+        "postalCode": "85747",
+        "country": "US"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner",
+      "ifNoneExist": "identifier=http://hl7.org/fhir/sid/us-npi|9999927289"
+    }
+  }, {
+    "fullUrl": "urn:uuid:dc34d470-f0d7-aca3-6f28-1a0da2ef58b8",
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "dc34d470-f0d7-aca3-6f28-1a0da2ef58b8",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" ]
+      },
+      "practitioner": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "9999927289"
+        },
+        "display": "Dr. Mariam937 Hane680"
+      },
+      "organization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "dc1a3bcd-37ba-3b9d-9115-1ec6afb264e4"
+        },
+        "display": "URGENT CARE ASSOCIATES - SOUTHEAST TUCSON"
+      },
+      "code": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "specialty": [ {
+        "coding": [ {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "208D00000X",
+          "display": "General Practice"
+        } ],
+        "text": "General Practice"
+      } ],
+      "location": [ {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "4cccd349-6db4-3d26-baf9-af194567f523"
+        },
+        "display": "URGENT CARE ASSOCIATES - SOUTHEAST TUCSON"
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "520-382-8000"
+      }, {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+          "valueBoolean": true
+        } ],
+        "system": "email",
+        "value": "Mariam937.Hane680@example.com",
+        "use": "work"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "PractitionerRole"
+    }
+  } ]
+}

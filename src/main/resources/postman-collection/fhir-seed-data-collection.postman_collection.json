@@ -1,0 +1,864 @@
+{
+	"info": {
+		"_postman_id": "ef5514cd-ad4d-4757-9e07-6b5027767f88",
+		"name": "fhir-seed-data-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "organizations",
+			"item": [
+				{
+					"name": "organizations1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Type\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.type).to.eql(\"batch-response\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/organizations/hospitalInformation1616535479266.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/organizations/organization.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Organization/privacy-consent-scenario-H-healthcurrent",
+							"host": [
+								"{{HAPI_FHIR_URL}}Organization"
+							],
+							"path": [
+								"privacy-consent-scenario-H-healthcurrent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/organizations/organization2.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Organization/privacy-consent-scenario-H-mariposaclinic",
+							"host": [
+								"{{HAPI_FHIR_URL}}Organization"
+							],
+							"path": [
+								"privacy-consent-scenario-H-mariposaclinic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "practitioners",
+			"item": [
+				{
+					"name": "practitioners1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Type\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.type).to.eql(\"batch-response\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/practitioners/practitionerInformation1616535479266.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "questionnaires",
+			"item": [
+				{
+					"name": "questionnaire-dnr",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/questionnaires/leap-dnr.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Questionnaire/leap-dnr",
+							"host": [
+								"{{HAPI_FHIR_URL}}Questionnaire"
+							],
+							"path": [
+								"leap-dnr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "questionnaire-livingwill",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/questionnaires/leap-livingwill.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Questionnaire/leap-livingwill",
+							"host": [
+								"{{HAPI_FHIR_URL}}Questionnaire"
+							],
+							"path": [
+								"leap-livingwill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "questionnaire-poahealthcare",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/questionnaires/leap-poahealthcare.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Questionnaire/leap-poahealthcare",
+							"host": [
+								"{{HAPI_FHIR_URL}}Questionnaire"
+							],
+							"path": [
+								"leap-poahealthcare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "questionnaire-poamentalhealth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/questionnaires/leap-poamentalhealth.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Questionnaire/leap-poamentalhealth",
+							"host": [
+								"{{HAPI_FHIR_URL}}Questionnaire"
+							],
+							"path": [
+								"leap-poamentalhealth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "questionnaire-patient-privacy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/questionnaires/leap-patient-privacy.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Questionnaire/leap-patient-privacy",
+							"host": [
+								"{{HAPI_FHIR_URL}}Questionnaire"
+							],
+							"path": [
+								"leap-patient-privacy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "questionnaire-polst",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/questionnaires/leap-polst.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}Questionnaire/leap-polst",
+							"host": [
+								"{{HAPI_FHIR_URL}}Questionnaire"
+							],
+							"path": [
+								"leap-polst"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patients",
+			"item": [
+				{
+					"name": "patient-cecilia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Cecilia788_Verduzco998_929d32ca-70dc-7340-9bb5-de6b07476a98.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-estela",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Estela596_Orta736_32429a57-5a85-848b-87c9-87e434aa9a32.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-guadalupe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Guadalupe206_Moreno82_832c1740-1643-bf1b-ce5c-b2382a82572c.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-laura",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Laura391_Pelayo88_52e654c0-ccf7-f3d5-657a-14667b8fd751.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-lorena",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Lorena247_Badillo851_2a985637-bff1-c7f0-7653-2d41a0b48fdc.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-martin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Martín25_Rodríquez611_6240091c-5452-b5a3-25b0-439c8592b2cc.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-nicholas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Nicolás801_Córdova800_24891a1a-c618-2952-b689-208a8e41c180.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-russel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Russel238_Morar593_e15fd49e-1314-6d62-97b7-59b08ee6a6b1.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-virginia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Virginia437_Ocampo729_003ea624-5c69-98d5-5337-075aa4b7390e.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient-willie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "{{SEED_DATA_DIR}}/patients-demographics-clinical-history/Willie882_Nienow652_8c23e18b-8ffe-2f15-2d23-8c4384ec3acd.json"
+							}
+						},
+						"url": {
+							"raw": "{{HAPI_FHIR_URL}}",
+							"host": [
+								"{{HAPI_FHIR_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
