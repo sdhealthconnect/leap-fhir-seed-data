@@ -38,6 +38,10 @@ To
 
 ![Environment Set](docs/assets/environmentset.png?raw=true)
 
+- Modify your settings to allow to read files outside of your LEAP workspace.
+![Modify Settings](docs/assets/modifysettings.png?raw=true)
+
+
 - Import FHIR Seed Data Postman Collection File {clone directory}/leap-fhir-seed-data/src/main/resources/postman-collection/fhir-seed-data-collection.postman_collection.json
 ![Import Collection](docs/assets/importcollection.png?raw=true)
 
