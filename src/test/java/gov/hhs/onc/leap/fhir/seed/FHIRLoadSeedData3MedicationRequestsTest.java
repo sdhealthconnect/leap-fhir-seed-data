@@ -81,6 +81,8 @@ public class FHIRLoadSeedData3MedicationRequestsTest {
                 newRequest.getMedicationCodeableConcept().addCoding(coding);
                 newRequest.getMedicationCodeableConcept().setText("Sertraline 25 MG Oral Tablet [Zoloft]");
 
+                newRequest.setRequester(participantReference);
+
                 newRequest.setPerformer(participantReference);
 
                 newRequest.getReasonReference().add(conditionReference);
