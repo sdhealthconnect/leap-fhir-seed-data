@@ -50,52 +50,53 @@ public class FHIRLoadSeedData3MedicationRequestsTest {
                 System.out.println("Processing patientID: "+patientId);
                 Collection<Encounter>  patientEncounters = fhirEncounter.getPatientEncounters(patientId);
                 System.out.println("Number of Patient Encounters Returned: "+patientEncounters.size());
-                Iterator encounterIter = patientEncounters.iterator();
-                //get first if sorted correctly
-                Encounter mostRecent = (Encounter) encounterIter.next();
-                Encounter.EncounterParticipantComponent participantComponent = mostRecent.getParticipant().get(0);
-                Reference participantReference = participantComponent.getIndividual();
-                Reference conditionReference = mostRecent.getDiagnosisFirstRep().getCondition();
-                String encounterRef = "Encounter/"+mostRecent.getIdElement().getIdPart();
+                if ( patientEncounters.size() > 0) {
+                    Iterator encounterIter = patientEncounters.iterator();
+                    //get first if sorted correctly
+                    Encounter mostRecent = (Encounter) encounterIter.next();
+                    Encounter.EncounterParticipantComponent participantComponent = mostRecent.getParticipant().get(0);
+                    Reference participantReference = participantComponent.getIndividual();
+                    Reference conditionReference = mostRecent.getDiagnosisFirstRep().getCondition();
+                    String encounterRef = "Encounter/" + mostRecent.getIdElement().getIdPart();
 
-                MedicationRequest newRequest = new MedicationRequest();
-                newRequest.setId("leap-medicationrequest-"+patientId);
-                newRequest.setStatus(MedicationRequest.MedicationRequestStatus.ONHOLD);
-                newRequest.setAuthoredOn(new Date());
+                    MedicationRequest newRequest = new MedicationRequest();
+                    newRequest.setId("leap-medicationrequest-" + patientId);
+                    newRequest.setStatus(MedicationRequest.MedicationRequestStatus.ONHOLD);
+                    newRequest.setAuthoredOn(new Date());
 
-                Reference encounterReference = new Reference();
-                encounterReference.setReference(encounterRef);
-                newRequest.setEncounter(encounterReference);
+                    Reference encounterReference = new Reference();
+                    encounterReference.setReference(encounterRef);
+                    newRequest.setEncounter(encounterReference);
 
-                newRequest.setIntent(MedicationRequest.MedicationRequestIntent.ORDER);
+                    newRequest.setIntent(MedicationRequest.MedicationRequestIntent.ORDER);
 
-                Reference patientReference = new Reference();
-                patientReference.setReference("Patient/"+patientId);
-                newRequest.setSubject(patientReference);
+                    Reference patientReference = new Reference();
+                    patientReference.setReference("Patient/" + patientId);
+                    newRequest.setSubject(patientReference);
 
-                Coding coding = new Coding();
-                coding.setDisplay("Sertraline 25 MG Oral Tablet [Zoloft]");
-                coding.setSystem("http://www.nlm.nih.gov/research/umls/rxnorm");
-                coding.setCode("212233");
+                    Coding coding = new Coding();
+                    coding.setDisplay("Sertraline 25 MG Oral Tablet [Zoloft]");
+                    coding.setSystem("http://www.nlm.nih.gov/research/umls/rxnorm");
+                    coding.setCode("212233");
 
-                newRequest.getMedicationCodeableConcept().addCoding(coding);
-                newRequest.getMedicationCodeableConcept().setText("Sertraline 25 MG Oral Tablet [Zoloft]");
+                    newRequest.getMedicationCodeableConcept().addCoding(coding);
+                    newRequest.getMedicationCodeableConcept().setText("Sertraline 25 MG Oral Tablet [Zoloft]");
 
-                newRequest.setRequester(participantReference);
+                    newRequest.setRequester(participantReference);
 
-                newRequest.setPerformer(participantReference);
+                    newRequest.setPerformer(participantReference);
 
-                newRequest.getReasonReference().add(conditionReference);
+                    newRequest.getReasonReference().add(conditionReference);
 
-                try {
-                    fhirMedicationRequest.createMedicationRequest(newRequest);
-                    medRequestsCreated++;
+                    try {
+                        fhirMedicationRequest.createMedicationRequest(newRequest);
+                        medRequestsCreated++;
+                    } catch (Exception ex) {
+
+                        ex.printStackTrace();
+                    }
+                    patientProcessed++;
                 }
-                catch (Exception ex) {
-
-                    ex.printStackTrace();
-                }
-                patientProcessed++;
             }
         }
         else {
