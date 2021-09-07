@@ -56,7 +56,7 @@ To
 
 ````
 hapi-fhir:
-  url: ${HAPI_FHIR_URL:http://34.94.253.50:8080/hapi-fhir-jpaserver/fhir/}
+  url: ${HAPI_FHIR_URL:https://sdhc-hapi-fhir-leap-wafxyq4bza-uc.a.run.app/fhir/}
 ````
 
 **Step #2** - Run Load Tests
